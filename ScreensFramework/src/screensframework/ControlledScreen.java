@@ -36,15 +36,19 @@
  * and therefore, elected the GPL Version 2 license, then the option applies
  * only if the new code is made subject to such option by the copyright
  * holder.
- */ 
+ */
+
+/*
+ * Portions Copyright 2018 Warren Henning.
+ * Contributor elects to include this software in this distribution under the
+ * GPL Version 2 license.
+ */
 package screensframework;
 
-/**
- *
- * @author Angie
- */
-public interface ControlledScreen {
-    
-    //This method will allow the injection of the Parent ScreenPane
-    public void setScreenParent(ScreensController screenPage);
+abstract class ControlledScreen {
+    ScreensController myController;
+
+    void setScreenParent(ScreensController screenParent) {
+        myController = screenParent;
+    }
 }

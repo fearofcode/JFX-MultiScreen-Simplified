@@ -36,43 +36,25 @@
  * and therefore, elected the GPL Version 2 license, then the option applies
  * only if the new code is made subject to such option by the copyright
  * holder.
- */ 
-
+ */
+/*
+ * Portions Copyright 2018 Warren Henning.
+ * Contributor elects to include this software in this distribution under the
+ * GPL Version 2 license.
+ */
 package screensframework;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author Angie
- */
-public class Screen1Controller implements Initializable, ControlledScreen {
-
-    ScreensController myController;
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
-    
-    public void setScreenParent(ScreensController screenParent){
-        myController = screenParent;
+public class Screen1Controller extends ControlledScreen {
+    @FXML
+    private void goToScreen2(ActionEvent event) {
+        myController.setController(Screen2Controller.class);
     }
 
     @FXML
-    private void goToScreen2(ActionEvent event){
-       myController.setScreen(ScreensFramework.screen2ID);
-    }
-    
-    @FXML
-    private void goToScreen3(ActionEvent event){
-       myController.setScreen(ScreensFramework.screen3ID);
+    private void goToScreen3(ActionEvent event) {
+        myController.setController(Screen3Controller.class);
     }
 }
