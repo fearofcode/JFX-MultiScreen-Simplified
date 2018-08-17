@@ -44,22 +44,37 @@
  */
 package screensframework;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.layout.StackPane;
 
-public class ScreensFramework extends Application {
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        ScreensController mainContainer = new ScreensController();
-        mainContainer.loadController(Screen1Controller.class);
-        mainContainer.loadController(Screen2Controller.class);
-        mainContainer.loadController(Screen3Controller.class);
+import java.util.HashMap;
 
-        mainContainer.setController(Screen1Controller.class);
+class ScreenSwitcher extends StackPane {
+    private HashMap<Class, Node> screens = new HashMap<>();
 
-        Scene scene = new Scene(mainContainer);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    private void addScreen(Class klazz, Node screen) {
+        screens.put(klazz, screen);
+    }
+
+    void loadController(Class klazz) throws Exception {
+        String resourcePath = klazz.getSimpleName() + ".fxml";
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resourcePath));
+        Parent loadScreen = myLoader.load();
+        ControlledScreen controller = myLoader.getController();
+        controller.setScreenParent(this);
+        addScreen(klazz, loadScreen);
+    }
+
+    void setController(Class klazz) {
+        Node node = screens.get(klazz);
+        if (node != null) {
+            if (!getChildren().isEmpty()) {
+                getChildren().remove(0);
+            }
+
+            getChildren().add(node);
+        }
     }
 }
