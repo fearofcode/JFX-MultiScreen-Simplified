@@ -12,6 +12,12 @@ This repo does the following:
 
 The original code was fine, I just think this shows the idea more clearly.
 
+<a href="https://github.com/fearofcode/JFX-MultiScreen-Simplified/blob/master/ScreensFramework/src/screensframework/ScreenSwitchingDemo.java">ScreenSwitchingDemo</a> has the main application.
+
+<a h ref="https://github.com/fearofcode/JFX-MultiScreen-Simplified/blob/master/ScreensFramework/src/screensframework/ScreenSwitcher.java">ScreenSwitcher</a> maintains a `HashMap` of `Class`es to `Node`s.
+
+To change the screen, nodes get pushed and popped off the view stack.
+
 LICENSE
 ======
 
