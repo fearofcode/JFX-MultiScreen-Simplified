@@ -1,5 +1,7 @@
 *.class
+nbproject/
 ScreensFramework/nbproject/
 *.iml
 .idea/
 out/
+.DS_Store
