@@ -9,4 +9,4 @@ This repo does the following:
 - Removes animation for simplicity
 - General cleanup to make code smaller
 
-The original code was smaller, I just think this shows the idea more clearly.
+The original code was fine, I just think this shows the idea more clearly.
