@@ -3,7 +3,11 @@ JFX-MultiScreen
 
 Original code: https://github.com/acaicedo/JFX-MultiScreen
 
-This repo does the following:
+This repo shows a simple example of switching screens in a somewhat maintainable way using a `StackPane`.
+
+See https://www.youtube.com/watch?v=5GsdaZWDcdY for the original explanation.
+
+This repo does the following over the base code:
 
 - Replaces string references with classes for better safety
 - Removes animation for simplicity
