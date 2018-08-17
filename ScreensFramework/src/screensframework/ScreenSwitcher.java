@@ -54,17 +54,18 @@ import java.util.HashMap;
 class ScreenSwitcher extends StackPane {
     private HashMap<Class, Node> screens = new HashMap<>();
 
-    private void addScreen(Class klazz, Node screen) {
-        screens.put(klazz, screen);
-    }
-
     void registerController(Class klazz) throws Exception {
+        /* simple convention that works fine for this demo */
         String resourcePath = klazz.getSimpleName() + ".fxml";
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resourcePath));
-        Parent loadScreen = myLoader.load();
-        ControlledScreen controller = myLoader.getController();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(resourcePath));
+
+        Parent loadScreen = loader.load();
+
+        ControlledScreen controller = loader.getController();
         controller.setScreenParent(this);
-        addScreen(klazz, loadScreen);
+
+        screens.put(klazz, loadScreen);
     }
 
     void setController(Class klazz) {
