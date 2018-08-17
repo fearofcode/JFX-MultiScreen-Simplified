@@ -68,7 +68,7 @@ class ScreenSwitcher extends StackPane {
         screens.put(klazz, loadScreen);
     }
 
-    void setController(Class klazz) {
+    void switchToScreen(Class klazz) {
         Node node = screens.get(klazz);
         if (node != null) {
             if (!getChildren().isEmpty()) {

@@ -56,7 +56,7 @@ public class ScreenSwitchingDemo extends Application {
         screenSwitcher.registerController(Screen2Controller.class);
         screenSwitcher.registerController(Screen3Controller.class);
 
-        screenSwitcher.setController(Screen1Controller.class);
+        screenSwitcher.switchToScreen(Screen1Controller.class);
 
         Scene scene = new Scene(screenSwitcher);
         primaryStage.setScene(scene);
