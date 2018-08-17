@@ -1,5 +1,5 @@
 *.class
-nbproject/
+ScreensFramework/nbproject/
 *.iml
 .idea/
 out/
