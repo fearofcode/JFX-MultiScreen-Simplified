@@ -58,7 +58,7 @@ class ScreenSwitcher extends StackPane {
         screens.put(klazz, screen);
     }
 
-    void loadController(Class klazz) throws Exception {
+    void registerController(Class klazz) throws Exception {
         String resourcePath = klazz.getSimpleName() + ".fxml";
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resourcePath));
         Parent loadScreen = myLoader.load();

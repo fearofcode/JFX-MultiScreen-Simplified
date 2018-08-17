@@ -46,9 +46,9 @@
 package screensframework;
 
 abstract class ControlledScreen {
-    ScreenSwitcher myController;
+    ScreenSwitcher screenSwitcher;
 
-    void setScreenParent(ScreenSwitcher screenParent) {
-        myController = screenParent;
+    void setScreenParent(ScreenSwitcher screenSwitcher) {
+        this.screenSwitcher = screenSwitcher;
     }
 }

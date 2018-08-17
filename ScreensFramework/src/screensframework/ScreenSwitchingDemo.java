@@ -51,14 +51,14 @@ import javafx.stage.Stage;
 public class ScreenSwitchingDemo extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ScreenSwitcher mainContainer = new ScreenSwitcher();
-        mainContainer.loadController(Screen1Controller.class);
-        mainContainer.loadController(Screen2Controller.class);
-        mainContainer.loadController(Screen3Controller.class);
+        ScreenSwitcher screenSwitcher = new ScreenSwitcher();
+        screenSwitcher.registerController(Screen1Controller.class);
+        screenSwitcher.registerController(Screen2Controller.class);
+        screenSwitcher.registerController(Screen3Controller.class);
 
-        mainContainer.setController(Screen1Controller.class);
+        screenSwitcher.setController(Screen1Controller.class);
 
-        Scene scene = new Scene(mainContainer);
+        Scene scene = new Scene(screenSwitcher);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

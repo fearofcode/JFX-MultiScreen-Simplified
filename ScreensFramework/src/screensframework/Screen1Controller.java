@@ -50,11 +50,11 @@ import javafx.fxml.FXML;
 public class Screen1Controller extends ControlledScreen {
     @FXML
     private void goToScreen2(ActionEvent event) {
-        myController.setController(Screen2Controller.class);
+        screenSwitcher.setController(Screen2Controller.class);
     }
 
     @FXML
     private void goToScreen3(ActionEvent event) {
-        myController.setController(Screen3Controller.class);
+        screenSwitcher.setController(Screen3Controller.class);
     }
 }
