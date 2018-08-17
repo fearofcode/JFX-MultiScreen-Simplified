@@ -9,6 +9,7 @@ See https://www.youtube.com/watch?v=5GsdaZWDcdY for the original explanation.
 
 This repo does the following over the base code:
 
+- Add a convention of FXML files matching controllers to avoid the need to explicitly list filenames
 - Replaces string references with classes for better safety
 - Removes animation for simplicity
 - General cleanup to make code smaller
